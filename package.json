@@ -1,0 +1,10 @@
+{
+  "name": "fsharp-inverview-questions",
+  "version": "0.0.4",
+  "description": "F# interview questions",
+  "scripts": {
+    "compile": "dotnet run"
+  },
+  "author": "Mike Stolnikov",
+  "license": "MIT"
+}
