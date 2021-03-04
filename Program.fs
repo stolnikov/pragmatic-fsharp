@@ -18,6 +18,13 @@ let main argv =
     let allTextLines = bodyLines validChapterPaths
 
     let header = "# Pragmatic guide to F#
+
+📝 author's personal opinion on controversial topics
+
+📙 source code link
+
+The document has numerous references to [useful resources](https://fsharp.org/testimonials/) to save a reader some googling time.
+
 ### Table of contents
 "
 

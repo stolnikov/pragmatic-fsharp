@@ -2,7 +2,7 @@
 
 ### What is `Async<'T>` type in F#? What is `async` keyword?
 
- `Async<'T>` type is the core concept of F# asynchronous programming and represents a **composable** asynchronous computation. A value of type `Async<_>` is best thought of as a [“task specification” or “task generator”](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/async-padl-revised-v2.pdf) ([source code link](https://github.com/fsharp/fsharp/blob/master/src/fsharp/FSharp.Core/async.fs)).
+ `Async<'T>` type is the core concept of F# asynchronous programming and represents a **composable** asynchronous computation. A value of type `Async<_>` is best thought of as a [“task specification” or “task generator”](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/async-padl-revised-v2.pdf) ([📙 source](https://github.com/fsharp/fsharp/blob/master/src/fsharp/FSharp.Core/async.fs)).
 
 ```f#
 /// Represents an asynchronous computation
@@ -10,7 +10,7 @@
 type Async<'T> =
     { Invoke : (AsyncActivation<'T> -> AsyncReturn) }
 ```
-The `async` keyword is an alias for `AsyncBuilder()` object ([source code link](https://github.com/fsharp/fsharp/blob/master/src/fsharp/FSharp.Core/fslib-extra-pervasives.fs)).
+The `async` keyword is an alias for `AsyncBuilder()` object ([📙 source](https://github.com/fsharp/fsharp/blob/master/src/fsharp/FSharp.Core/fslib-extra-pervasives.fs)).
 
 ```f#
 [<CompiledName("DefaultAsyncBuilder")>]
