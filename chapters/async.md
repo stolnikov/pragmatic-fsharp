@@ -1,4 +1,4 @@
-## Asynchronous programming
+# Asynchronous programming
 
 ### What is `Async<'T>` type in F#? What is `async` keyword?
 

@@ -28,7 +28,7 @@ module TableOfContents =
     /// make a proper indented TOC heading
     let makeTocHeadingWithLink (slugifier: string -> string) (heading: TocHeading): string =
         let padding =
-            sprintf "%-*s" ((heading.Level - 2) * 2 + 1) " "
+            sprintf "%-*s" ((heading.Level - 1) * 2 + 1) " "
 
         sprintf "%s- [%s](#%s)" padding heading.Title (slugifier heading.Title)
 

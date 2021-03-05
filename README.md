@@ -13,19 +13,19 @@ The document has numerous references to [useful resources](https://fsharp.org/te
 
 ### Table of contents
  - [Introduction](#introduction)
-   - [What is F#?](#what-is-f)
-   - [Is F# a purely functional language?](#is-f-a-purely-functional-language)
-   - [What is purity and referential transparency as applied to expressions?](#what-is-purity-and-referential-transparency-as-applied-to-expressions)
-   - [What are the reasons for using mutation-based function implementations in `FSharp.Core`?](#what-are-the-reasons-for-using-mutation-based-function-implementations-in-fsharpcore)
+     - [What is F#?](#what-is-f)
+     - [Is F# a purely functional language?](#is-f-a-purely-functional-language)
+     - [What is purity and referential transparency as applied to expressions?](#what-is-purity-and-referential-transparency-as-applied-to-expressions)
+     - [What are the reasons for using mutation-based function implementations in `FSharp.Core`?](#what-are-the-reasons-for-using-mutation-based-function-implementations-in-fsharpcore)
  - [Type System](#type-system)
-   - [What is the difference between variables in F# and C#?](#what-is-the-difference-between-variables-in-f-and-c)
-   - [What are units of measure in F#? Is there an extra runtime overhead?](#what-are-units-of-measure-in-f-is-there-an-extra-runtime-overhead)
-   - [How can F# assist us in "making illegal states unrepresentable" when designing our domain model?](#how-can-f-assist-us-in-making-illegal-states-unrepresentable-when-designing-our-domain-model)
+     - [What is the difference between variables in F# and C#?](#what-is-the-difference-between-variables-in-f-and-c)
+     - [What are units of measure in F#? Is there an extra runtime overhead?](#what-are-units-of-measure-in-f-is-there-an-extra-runtime-overhead)
+     - [How can F# assist us in "making illegal states unrepresentable" when designing our domain model?](#how-can-f-assist-us-in-making-illegal-states-unrepresentable-when-designing-our-domain-model)
  - [Asynchronous programming](#asynchronous-programming)
-   - [What is `Async<'T>` type in F#? What is `async` keyword?](#what-is-asynct-type-in-f-what-is-async-keyword)
-   - [What are the differences between `Task<T>` in C# and `Async<'T>` in F#?](#what-are-the-differences-between-taskt-in-c-and-asynct-in-f)
+     - [What is `Async<'T>` type in F#? What is `async` keyword?](#what-is-asynct-type-in-f-what-is-async-keyword)
+     - [What are the differences between `Task<T>` in C# and `Async<'T>` in F#?](#what-are-the-differences-between-taskt-in-c-and-asynct-in-f)
 
-## Introduction
+# Introduction
 ### What is F#?
 
 F# is a [functional-first](https://dotnet.microsoft.com/languages/fsharp), strongly typed, [multi-paradigm](https://en.wikipedia.org/wiki/Comparison_of_programming_paradigms), [general-purpose](https://en.wikipedia.org/wiki/General-purpose_programming_language) programming language that can be used to develop software in many different application domains.
@@ -86,7 +86,7 @@ There are plenty of algorithms that can be made more performant or/and memory ef
 **[⬆ Back to Top](#table-of-contents)**
 
 
-## Type System
+# Type System
 ### What is the difference between variables in F# and C#?
 
 In contrast to imperative programming languages, functional languages emphasize the use of immutable values over mutable variables. In F#, values  are immutable by default and there is a clear distinction between the concepts of assigning a value to a variable (`<-`) and binding a value to an identifier (`=`). A variable can only be reassigned when marked as `mutable` at its declaration.
@@ -106,7 +106,7 @@ With F# type system, we can encode simple domain rules directly into types.
 **[⬆ Back to Top](#table-of-contents)**
 
 
-## Asynchronous programming
+# Asynchronous programming
 
 ### What is `Async<'T>` type in F#? What is `async` keyword?
 

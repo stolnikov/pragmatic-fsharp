@@ -1,4 +1,4 @@
-## Introduction
+# Introduction
 ### What is F#?
 
 F# is a [functional-first](https://dotnet.microsoft.com/languages/fsharp), strongly typed, [multi-paradigm](https://en.wikipedia.org/wiki/Comparison_of_programming_paradigms), [general-purpose](https://en.wikipedia.org/wiki/General-purpose_programming_language) programming language that can be used to develop software in many different application domains.
