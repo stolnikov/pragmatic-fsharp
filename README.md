@@ -14,6 +14,8 @@ The document has numerous references to [useful resources](https://fsharp.org/te
    - [What are the reasons for using mutation-based function implementations in `FSharp.Core`?](#what-are-the-reasons-for-using-mutation-based-function-implementations-in-fsharpcore)
  - [Type System](#type-system)
    - [What is the difference between variables in F# and C#?](#what-is-the-difference-between-variables-in-f-and-c)
+   - [What are units of measure in F#? Is there an extra runtime overhead?](#what-are-units-of-measure-in-f-is-there-an-extra-runtime-overhead)
+   - [How can F# assist us in "making illegal states unrepresentable" when designing our domain model?](#how-can-f-assist-us-in-making-illegal-states-unrepresentable-when-designing-our-domain-model)
  - [Asynchronous programming](#asynchronous-programming)
    - [What is `Async<'T>` type in F#? What is `async` keyword?](#what-is-asynct-type-in-f-what-is-async-keyword)
    - [What are the differences between `Task<T>` in C# and `Async<'T>` in F#?](#what-are-the-differences-between-taskt-in-c-and-asynct-in-f)
@@ -83,6 +85,18 @@ There are plenty of algorithms that can be made more performant or/and memory ef
 ### What is the difference between variables in F# and C#?
 
 In contrast to imperative programming languages, functional languages emphasize the use of immutable values over mutable variables. In F#, values  are immutable by default and there is a clear distinction between the concepts of assigning a value to a variable (`<-`) and binding a value to an identifier (`=`). A variable can only be reassigned when marked as `mutable` at its declaration.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What are units of measure in F#? Is there an extra runtime overhead?
+
+[Units of measure](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/units-of-measure) are a type of metadata that can be associated with floating point or signed integer values. This metadata is then used by the compiler to check whether arithmetic relationships of annotated values are valid. It gets erased during compilation and therefore does not incur a performance hit at runtime.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### How can F# assist us in "making illegal states unrepresentable" when designing our domain model?
+
+With F# type system, we can encode simple domain rules directly into types.
 
 **[⬆ Back to Top](#table-of-contents)**
 

@@ -29,7 +29,7 @@ The document has numerous references to [useful resources](https://fsharp.org/te
 "
 
     let tocPattern =
-        @"^(?<Level>[#]{1,4}) (?<Title>.{4,96}?)(?<ShouldOmit><!-- omit in toc -->)?$"
+        @"^(?<Level>[#]{1,4}) (?<Title>.{4,128}?)(?<ShouldOmit><!-- omit in toc -->)?$"
 
     let toc =
         header + compileToc tocPattern allTextLines
