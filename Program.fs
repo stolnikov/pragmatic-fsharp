@@ -17,7 +17,12 @@ let main argv =
 
     let allTextLines = bodyLines validChapterPaths
 
-    let header = "# Pragmatic guide to F#
+    let header = """
+<p align="center"><img src="img/fsharp.png" width="256px" alt="Pragmatic FSharp"></p>
+<h1 align="center">Pragmatic guide to F#</h1>
+<p align="center">Explore F# in the form of questions and answers</p>
+
+<br>
 
 📝 author's personal opinion on controversial topics
 
@@ -26,7 +31,7 @@ let main argv =
 The document has numerous references to [useful resources](https://fsharp.org/testimonials/) to save a reader some googling time.
 
 ### Table of contents
-"
+"""
 
     let tocPattern =
         @"^(?<Level>[#]{1,4}) (?<Title>.{4,128}?)(?<ShouldOmit><!-- omit in toc -->)?$"

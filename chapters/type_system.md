@@ -7,7 +7,7 @@ In contrast to imperative programming languages, functional languages emphasize 
 
 ### What are units of measure in F#? Is there an extra runtime overhead?
 
-[Units of measure](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/units-of-measure) are a type of metadata that can be associated with floating point or signed integer values. This metadata is then used by the compiler to check whether arithmetic relationships of annotated values are valid. It gets erased during compilation and therefore does not incur a performance hit at runtime.
+[Units of measure](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/units-of-measure) are a type of metadata that can be associated with floating point or signed integer values. This metadata is then used by the compiler to check whether arithmetic relationships of annotated values are valid. It gets erased during compilation and therefore [does not incur a performance hit at runtime](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/units-of-measure#units-at-runtime).
 
 **[⬆ Back to Top](#table-of-contents)**
 
