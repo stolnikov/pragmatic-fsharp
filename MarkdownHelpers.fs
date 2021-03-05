@@ -73,3 +73,4 @@ module MarkdownMerge =
         |> Array.concat
 
     let toBodyString (lines: string []) = lines |> String.concat "\n"
+    

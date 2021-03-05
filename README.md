@@ -17,6 +17,8 @@ The document has numerous references to [useful resources](https://fsharp.org/te
      - [Is F# a purely functional language?](#is-f-a-purely-functional-language)
      - [What is purity and referential transparency as applied to expressions?](#what-is-purity-and-referential-transparency-as-applied-to-expressions)
      - [What are the reasons for using mutation-based function implementations in `FSharp.Core`?](#what-are-the-reasons-for-using-mutation-based-function-implementations-in-fsharpcore)
+   - [Operators](#operators)
+     - [What are `>>` and `<<` operators?](#what-are--and--operators)
  - [Type System](#type-system)
      - [What is the difference between variables in F# and C#?](#what-is-the-difference-between-variables-in-f-and-c)
      - [What are units of measure in F#? Is there an extra runtime overhead?](#what-are-units-of-measure-in-f-is-there-an-extra-runtime-overhead)
@@ -82,6 +84,36 @@ let inline contains value (array:'T[]) =
     state
 ```
 There are plenty of algorithms that can be made more performant or/and memory efficient if implemented on top of mutation. It is a good practice to [wrap mutable code in immutable interfaces](https://docs.microsoft.com/en-us/dotnet/fsharp/style-guide/conventions#wrap-mutable-code-in-immutable-interfaces) to steer clear of any unwanted effects as well as to achieve referential transparency. This way, mutable state isn't exposed to the consuming code and the caller isn't required to maintain it.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## Operators
+
+### What are `>>` and `<<` operators?
+
+These are [function composition operators](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/functions/#function-composition-and-pipelining) ([📙 source](https://github.com/fsharp/fsharp/blob/master/src/fsharp/FSharp.Core/prim-types.fs)).
+
+[Forward composition operator](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/symbol-and-operator-reference/) reads as: given two functions, `f` and `g`, and a value, `x`, compute the result of `f` of `x` and pass that result to `g`. 
+
+```f#
+// forward composition operator
+// val ( >> ) : f: ('a -> 'b) -> g: ('b -> 'c) -> x: 'a -> 'c
+let inline (>>) f g x = g (f x)
+```
+```
+x |> (g >> f) = x |> g |> f = f (g x)
+```
+
+[Backward composition operator](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/symbol-and-operator-reference/) `<<` composes two functions in reverse order; the second one is executed first.
+
+```f#
+// backward composition operator
+// val ( << ): g: 'a -> 'b -> f: 'c -> 'a -> x: 'c -> 'b
+let inline (<<) g f x = g (f x)
+```
+```
+(f << g) x = f (g x)
+```
 
 **[⬆ Back to Top](#table-of-contents)**
 
