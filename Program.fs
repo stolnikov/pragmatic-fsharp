@@ -15,7 +15,10 @@ let main argv =
 
     trimFileContents validChapterPaths
 
-    let allTextLines = bodyLines validChapterPaths
+    let allTextLines = 
+        validChapterPaths
+        |> bodyLines
+        |> addBackToTopLinks "<!-- up -->" "**[⬆ Back to Top](#table-of-contents)**"
 
     let header = """
 <p align="center"><img src="img/fsharp.png" width="256px" alt="Pragmatic FSharp"></p>

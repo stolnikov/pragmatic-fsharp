@@ -72,5 +72,11 @@ module MarkdownMerge =
                     | _ -> arr)
         |> Array.concat
 
+    let addBackToTopLinks (stringToReplace: string) (replaceWith: string) (lines: string[]) : string [] =
+        lines
+        |> Array.map(fun line -> 
+            match line.Trim() with
+            | x when x = stringToReplace -> replaceWith
+            | _ -> line)
+
     let toBodyString (lines: string []) = lines |> String.concat "\n"
-    

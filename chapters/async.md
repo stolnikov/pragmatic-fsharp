@@ -18,7 +18,7 @@ let async = AsyncBuilder()
 ```
  The `async { }` [computation expression](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/computation-expressions) provides a convenient syntax for building and controlling asynchronous computations. The `expression` placed within the `async` block (`async { expression }`) is set up to run asynchronously. The `async { }` computation expression itself is of type `Async<'T>`. It will produce a value of type `'T`, when executed, and deliver it to [continuation](https://en.wikipedia.org/wiki/Continuation).
 
-**[⬆ Back to Top](#table-of-contents)**
+<!-- up -->
 
 ### What are the differences between `Task<T>` in C# and `Async<'T>` in F#?
 
@@ -112,4 +112,4 @@ Thread ID: 4, IsThreadPoolThead: True
 </p>
 </details>
 
-**[⬆ Back to Top](#table-of-contents)**
+<!-- up -->

@@ -27,7 +27,7 @@ let fold<'T,'State> folder (state:'State) (list: 'T list) =
             acc <- f.Invoke(acc, x)
         acc
 ```
-**[⬆ Back to Top](#table-of-contents)**
+<!-- up -->
 
 ### What is purity and referential transparency as applied to expressions?
 
@@ -37,7 +37,7 @@ An expression is [pure](https://en.wikipedia.org/wiki/Pure_function) when it eva
 
 📝 In the context of F#, [which is an impure language](#is-f-a-purely-functional-language), an impure expression can arguably have the property of referential transparency when it includes impure functions and its resulting value does not depend on their side effects. For instance, condider a function with a side effect of logging its computation progress to the standard output. You can replace it with a similar function that does not log anything, which in effect makes it referentially transparent.
 
-**[⬆ Back to Top](#table-of-contents)**
+<!-- up -->
 
 ### What are the reasons for using mutation-based function implementations in `FSharp.Core`?
 
@@ -56,7 +56,7 @@ let inline contains value (array:'T[]) =
 ```
 There are plenty of algorithms that can be made more performant or/and memory efficient if implemented on top of mutation. It is a good practice to [wrap mutable code in immutable interfaces](https://docs.microsoft.com/en-us/dotnet/fsharp/style-guide/conventions#wrap-mutable-code-in-immutable-interfaces) to steer clear of any unwanted effects as well as to achieve referential transparency. This way, mutable state isn't exposed to the consuming code and the caller isn't required to maintain it.
 
-**[⬆ Back to Top](#table-of-contents)**
+<!-- up -->
 
 ## Operators
 
@@ -86,4 +86,4 @@ let inline (<<) g f x = g (f x)
 (f << g) x = f (g x)
 ```
 
-**[⬆ Back to Top](#table-of-contents)**
+<!-- up -->
