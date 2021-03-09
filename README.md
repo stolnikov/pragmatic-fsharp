@@ -25,7 +25,7 @@ The document has numerous references to [useful resources](https://fsharp.org/te
      - [What are units of measure in F#? Is there an extra runtime overhead?](#what-are-units-of-measure-in-f-is-there-an-extra-runtime-overhead)
      - [How can F# assist us in "making illegal states unrepresentable" when designing our domain model?](#how-can-f-assist-us-in-making-illegal-states-unrepresentable-when-designing-our-domain-model)
  - [Asynchronous programming](#asynchronous-programming)
-     - [What is `Async<'T>` type in F#? What is `async` keyword?](#what-is-asynct-type-in-f-what-is-async-keyword)
+     - [What is `Async<'T>` type in F#? What is `async`?](#what-is-asynct-type-in-f-what-is-async)
      - [What are the differences between `Task<T>` in C# and `Async<'T>` in F#?](#what-are-the-differences-between-taskt-in-c-and-asynct-in-f)
 
 # Introduction
@@ -155,7 +155,7 @@ With F# type system, we can encode simple domain rules directly into types.
 
 # Asynchronous programming
 
-### What is `Async<'T>` type in F#? What is `async` keyword?
+### What is `Async<'T>` type in F#? What is `async`?
 
  `Async<'T>` type is the core concept of F# asynchronous programming and represents a **composable** asynchronous computation. A value of type `Async<_>` is best thought of as a [“task specification” or “task generator”](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/async-padl-revised-v2.pdf) ([📙 source](https://github.com/fsharp/fsharp/blob/master/src/fsharp/FSharp.Core/async.fs)).
 
@@ -165,7 +165,7 @@ With F# type system, we can encode simple domain rules directly into types.
 type Async<'T> =
     { Invoke : (AsyncActivation<'T> -> AsyncReturn) }
 ```
-The `async` keyword is an alias for `AsyncBuilder()` object ([📙 source](https://github.com/fsharp/fsharp/blob/master/src/fsharp/FSharp.Core/fslib-extra-pervasives.fs)).
+`async` is [not a keyword](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/keyword-reference) in F# as it may seem at first glance. Rather, it is an identifier, an alias for `AsyncBuilder()` object ([📙 source](https://github.com/fsharp/fsharp/blob/master/src/fsharp/FSharp.Core/fslib-extra-pervasives.fs)).
 
 ```f#
 [<CompiledName("DefaultAsyncBuilder")>]
