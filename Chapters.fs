@@ -6,5 +6,6 @@ let toRelativePath directory extension fileName =
 /// this list impacts the order in which chapters will be merged
 let chapters =
     [ "introduction"
+      "functions"
       "type_system"
       "async" ]

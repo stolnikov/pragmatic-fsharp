@@ -17,7 +17,8 @@ The document has numerous references to [useful resources](https://fsharp.org/te
      - [Is F# a purely functional language?](#is-f-a-purely-functional-language)
      - [What is purity and referential transparency as applied to expressions?](#what-is-purity-and-referential-transparency-as-applied-to-expressions)
      - [What are the reasons for using mutation-based function implementations in `FSharp.Core`?](#what-are-the-reasons-for-using-mutation-based-function-implementations-in-fsharpcore)
-   - [Operators](#operators)
+ - [Working with functions](#working-with-functions)
+     - [What is currying? What is partial application?](#what-is-currying-what-is-partial-application)
      - [What are `>>` and `<<` operators?](#what-are--and--operators)
  - [Type System](#type-system)
      - [What is the difference between variables in F# and C#?](#what-is-the-difference-between-variables-in-f-and-c)
@@ -87,7 +88,14 @@ There are plenty of algorithms that can be made more performant or/and memory ef
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## Operators
+
+# Working with functions
+
+### What is currying? What is partial application?
+
+[Currying](https://docs.microsoft.com/en-us/dotnet/fsharp/introduction-to-functional-programming/first-class-functions#curried-functions) is a technique of transforming a function that has more than one parameter into a series of embedded functions, each of which has a single parameter. Currying allows to turn any function of n arguments into a function of n-1 arguments which returns a function that expects the remaining nth argument.
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ### What are `>>` and `<<` operators?
 
@@ -98,6 +106,13 @@ These are [function composition operators](https://docs.microsoft.com/en-us/dotn
 ```f#
 // forward composition operator
 // val ( >> ) : f: ('a -> 'b) -> g: ('b -> 'c) -> x: 'a -> 'c
+//              ~~~~~~~~~~~~~    ~~~~~~~~~~~~~    ~~~~~    ~~~
+//                    ^                ^            ^       ^
+//                    |                |            |       |
+//                    |                |            |       |
+//              1st parameter    2nd parameter  3rd param   /
+//                                                         |
+//                                                       result
 let inline (>>) f g x = g (f x)
 ```
 ```
