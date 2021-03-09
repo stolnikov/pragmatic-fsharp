@@ -18,8 +18,6 @@ let async = AsyncBuilder()
 ```
  The `async { }` [computation expression](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/computation-expressions) provides a convenient syntax for building and controlling asynchronous computations. The `expression` placed within the `async` block (`async { expression }`) is set up to run asynchronously. The `async { }` computation expression itself is of type `Async<'T>`. It will produce a value of type `'T`, when executed, and deliver it to [continuation](https://en.wikipedia.org/wiki/Continuation).
 
-<!-- up -->
-
 ### What are the differences between `Task<T>` in C# and `Async<'T>` in F#?
 
 In C# asynchronous methods return tasks of type `Task<T>` (or `Task` if a method returns `void`) that run immediately after the method is called and eventually produce a value. Consider this [top-level](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/exploration/top-level-statements) C# 9 console application.
@@ -54,7 +52,7 @@ AsyncTest();
 
 ```sh
 $ dotnet run
-warning CS4014: Because this call is not awaited, execution of the current method continues before the call is completed. Consider applying the 'await' operator to the result of the call. [/media/veracrypt1/UpskillTube/CsharpConsole/CsharpConsole.csproj]
+warning CS4014: Because this call is not awaited, execution of the current method continues before the call is completed. Consider applying the 'await' operator to the result of the call.
 start
 Thread ID: 4, IsThreadPoolThead: True
 end

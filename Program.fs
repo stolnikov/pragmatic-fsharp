@@ -6,14 +6,14 @@ open System.IO
 [<EntryPoint>]
 let main argv =
     let chaptersDirectory = "./chapters"
-    let extension = "md"
+    let fileExtension = "md"
 
     let validChapterPaths =
         chapters
-        |> List.map (toRelativePath chaptersDirectory extension)
+        |> List.map (toRelativePath chaptersDirectory fileExtension)
         |> List.filter File.Exists
 
-    trimFileContents validChapterPaths
+    trimFileContents validChapterPaths |> ignore
 
     let allTextLines = 
         validChapterPaths
@@ -23,24 +23,24 @@ let main argv =
     let header = """
 <p align="center"><img src="img/fsharp.png" width="256px" alt="Pragmatic FSharp"></p>
 <h1 align="center">Pragmatic guide to F#</h1>
-<p align="center">Explore F# in the form of questions and answers</p>
-
+<p align="center">Explore functional programming with F#</p>
+<p align="center">⚠️ This is a work in constant progress</p>
 <br>
 
-📝 author's personal opinion on controversial topics
-
 📙 source code link
+
+📝 author's personal opinion on controversial topics
 
 The document has numerous references to [useful resources](https://fsharp.org/testimonials/) to save a reader some googling time.
 
 ### Table of contents
 """
 
-    let tocPattern =
+    let tocRegexPattern =
         @"^(?<Level>[#]{1,4}) (?<Title>.{4,128}?)(?<ShouldOmit><!-- omit in toc -->)?$"
 
     let toc =
-        header + compileToc tocPattern allTextLines
+        header + compileToc tocRegexPattern allTextLines
 
     let body = toBodyString allTextLines
 
