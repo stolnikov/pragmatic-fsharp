@@ -29,7 +29,7 @@
 
 ### What is function composition?
 
-In mathematics, [function composition](https://en.wikipedia.org/wiki/Function_composition) is an operation that takes two functions `f` and `g` and produces a function `h` such that `h(x) = g(f(x))`.
+In mathematics, [function composition](https://en.wikipedia.org/wiki/Function_composition) is an operation that takes two functions `f` and `g` and produces a function `h` such that `h(x) =g(f(x))`.
 
 ### What is an expression in computer science?
 
@@ -39,9 +39,9 @@ In computer science, an [expression](https://en.wikipedia.org/wiki/Expression_(c
 
 [Referential transparency](https://en.wikipedia.org/wiki/Referential_transparency) is a [property of expressions](https://docs.microsoft.com/en-us/dotnet/fsharp/introduction-to-functional-programming/) such that they can be replaced with their output without affecting a program's behavior.
 
-An expression is [pure](https://en.wikipedia.org/wiki/Pure_function) when it evaluates to the same value when provided with the same explicit arguments, its evaluation produces no side effects and it does not access and rely on any data outside its scope (implicit arguments). Referential transparency of a pure expression is the logical corollary of it being pure.
+An expression is [pure](https://en.wikipedia.org/wiki/Pure_function) when it is deterministic – it evaluates to the same value when provided with the same input, and its evaluation produces no [side effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science)). In addition, a function should not rely on any mutable data outside its scope (implicit arguments) that might change between calls, otherwise it will break its referential transparency. Referential transparency of a pure expression is the logical corollary of it being pure.
 
-📝 In the context of F#, [which is an impure language](#is-f-a-purely-functional-language), an impure expression can arguably have the property of referential transparency when it includes impure functions and its resulting value does not depend on their side effects. For instance, condider a function with a side effect of logging its computation progress to the standard output. You can replace it with a similar function that does not log anything, which in effect makes it referentially transparent.
+📝 In the context of F#, [which is an impure language](#is-f-a-purely-functional-language), an impure expression can arguably have the property of referential transparency when it includes calls to impure functions and its resulting value does not depend on their results (if any) and side effects. For instance, consider a function with a side effect of logging its computation progress to the standard output. You can replace it with a similar pure function that does not log anything and produces the same results, which in effect means it is referentially transparent.
 
 #### What are the reasons for using mutation-based function implementations in `FSharp.Core`?
 
@@ -58,7 +58,7 @@ let inline contains value (array:'T[]) =
         i <- i + 1
     state
 ```
-There are plenty of algorithms that can be made more performant or/and memory efficient if implemented on top of mutation. It is a good practice to [wrap mutable code in immutable interfaces](https://docs.microsoft.com/en-us/dotnet/fsharp/style-guide/conventions#wrap-mutable-code-in-immutable-interfaces) to steer clear of any unwanted effects as well as to achieve referential transparency. This way, mutable state isn't exposed to the consuming code and the caller isn't required to maintain it.
+There are plenty of algorithms that can be made more performant or/and memory efficient if implemented on top of mutation. It is a good practice to [wrap mutable code in immutable interfaces](https://docs.microsoft.com/en-us/dotnet/fsharp/style-guide/conventions#wrap-mutable-code-in-immutable-interfaces) to achieve referential transparency and to not expose mutable state to the consuming code so that the caller isn't required to maintain it.
 
 <!-- up -->
 
