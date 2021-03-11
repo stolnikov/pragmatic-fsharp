@@ -8,4 +8,6 @@ let chapters =
     [ "introduction"
       "functions"
       "type_system"
-      "async" ]
+      "async"
+      "web_dev_backend"
+      "web_dev_frontend" ]

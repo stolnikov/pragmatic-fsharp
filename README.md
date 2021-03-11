@@ -9,7 +9,12 @@
 
 📝 author's personal opinion on controversial topics
 
-The document has numerous references to [useful resources](https://fsharp.org/testimonials/) to save a reader some googling time.
+Some goals while writing this book:
+* try to present the material in a clear and coherent manner
+* provide:
+    * examples when necessary
+    * references to [useful resources](https://fsharp.org/testimonials/) and terminology to save a reader some googling time
+    * links to source code repositories
 
 ### Table of contents
  - [Introduction](#introduction)
@@ -33,6 +38,9 @@ The document has numerous references to [useful resources](https://fsharp.org/te
  - [Asynchronous programming](#asynchronous-programming)
      - [What is `Async<'T>` type in F#? What is `async`?](#what-is-asynct-type-in-f-what-is-async)
      - [What are the differences between `Task<T>` in C# and `Async<'T>` in F#?](#what-are-the-differences-between-taskt-in-c-and-asynct-in-f)
+ - [Web Development: Backend](#web-development-backend)
+     - [What is `>=>` operator in Giraffe?](#what-is--operator-in-giraffe)
+ - [Web Development: Frontend](#web-development-frontend)
 
 # Introduction
 ### What is F#?
@@ -134,7 +142,7 @@ There are plenty of algorithms that can be made more performant or/and memory ef
 ## Operators
 ### What are `>>` and `<<` operators?
 
-These are [function composition operators](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/functions/#function-composition-and-pipelining) ([📙 source](https://github.com/fsharp/fsharp/blob/master/src/fsharp/FSharp.Core/prim-types.fs)) which are used to [compose two functions into one](#what-is-function-composition).
+These are [function composition operators](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/functions/#function-composition-and-pipelining) ([📙 source](https://github.com/fsharp/fsharp/blob/master/src/fsharp/FSharp.Core/prim-types.fs)) which are used to [combine two functions into one](#what-is-function-composition).
 
 [Forward composition operator](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/symbol-and-operator-reference/) `>>` reads as: given two functions, `f` and `g`, and a value, `x`, compute the result of `f` of `x` and pass that result to `g`. 
 
@@ -297,3 +305,11 @@ Thread ID: 4, IsThreadPoolThead: True
 </details>
 
 **[⬆ Back to Top](#table-of-contents)**
+
+
+# Web Development: Backend
+
+### What is `>=>` operator in Giraffe?
+
+
+# Web Development: Frontend

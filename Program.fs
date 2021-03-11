@@ -31,7 +31,12 @@ let main argv =
 
 📝 author's personal opinion on controversial topics
 
-The document has numerous references to [useful resources](https://fsharp.org/testimonials/) to save a reader some googling time.
+Some goals while writing this book:
+* try to present the material in a clear and coherent manner
+* provide:
+    * examples when necessary
+    * references to [useful resources](https://fsharp.org/testimonials/) and terminology to save a reader some googling time
+    * links to source code repositories
 
 ### Table of contents
 """

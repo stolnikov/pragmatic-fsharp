@@ -65,7 +65,7 @@ There are plenty of algorithms that can be made more performant or/and memory ef
 ## Operators
 ### What are `>>` and `<<` operators?
 
-These are [function composition operators](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/functions/#function-composition-and-pipelining) ([📙 source](https://github.com/fsharp/fsharp/blob/master/src/fsharp/FSharp.Core/prim-types.fs)) which are used to [compose two functions into one](#what-is-function-composition).
+These are [function composition operators](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/functions/#function-composition-and-pipelining) ([📙 source](https://github.com/fsharp/fsharp/blob/master/src/fsharp/FSharp.Core/prim-types.fs)) which are used to [combine two functions into one](#what-is-function-composition).
 
 [Forward composition operator](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/symbol-and-operator-reference/) `>>` reads as: given two functions, `f` and `g`, and a value, `x`, compute the result of `f` of `x` and pass that result to `g`. 
 
